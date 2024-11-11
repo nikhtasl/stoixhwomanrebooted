@@ -40,6 +40,9 @@ public class MatchService {
         return matchRepository.save(match);
     }
 
+    public Match readMatch(Long id) {
+        return matchRepository.findById(id).get();
+    }
 
     public Match updateMatch(Long id, MatchDTO matchDTO) {
         Match match = dtoUtilities.transformMatchDTOToMatch(matchDTO);
