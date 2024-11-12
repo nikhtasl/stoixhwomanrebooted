@@ -4,10 +4,12 @@ import com.example.stoixhwomanrebooted.dto.MatchDTO;
 import com.example.stoixhwomanrebooted.dto.MatchOddsDTO;
 import com.example.stoixhwomanrebooted.model.Match;
 import com.example.stoixhwomanrebooted.model.MatchOdds;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 
+@Service
 public class DTOUtilities {
     public Match transformMatchDTOToMatch(MatchDTO matchDTO) {
         Match match = new Match();

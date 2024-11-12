@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:13
+    container_name: postgresdb
+    environment:
+      POSTGRES_DB: stoixhwomanrebooteddatabase
+      POSTGRES_USER: stoixhwomanadm
+      POSTGRES_PASSWORD: whatevEr0@hsM
+
+    ports:
+      - "5432:5432"  # HostPort:ContainerPort
+    volumes:
+      - pgdata:/var/lib/postgresql/data  # Optional: To persist data
+    networks:
+      - app-network
+
+  app:
+    build: . # Path to your application
+    #      context: .           # Path to your application
+    #      dockerfile: Dockerfile  # Specify the Dockerfile if it has a custom name
+    image: stoixhwomanrebooted  # Replace with your actual Spring Boot app image name
+    container_name: my_spring_app
+    depends_on:
+      - postgres  # Ensures database starts first
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/stoixhwomanrebooteddatabase
+      SPRING_DATASOURCE_USERNAME: stoixhwomanadm
+      SPRING_DATASOURCE_PASSWORD: whatevEr0@hsM
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+volumes:
+  pgdata:
+
+networks:
+  app-network:  # Creates a shared network for both containers to communicate

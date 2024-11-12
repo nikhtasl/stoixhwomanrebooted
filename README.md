@@ -66,3 +66,5 @@ Troubleshooting
     Ensure Docker Desktop is running before building or running containers.
     If you encounter a file not found error during the Docker build, verify that the JAR file is correctly named in the Dockerfile.
     Ensure WSL 2 is enabled if you’re running Docker Desktop on Windows.
+
+Swagger UI available on: http://localhost:8080/swagger-ui/index.html
