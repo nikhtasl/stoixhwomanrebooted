@@ -1,6 +1,8 @@
 package com.example.stoixhwomanrebooted.dto;
 
 import com.example.stoixhwomanrebooted.enums.Sport;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import io.swagger.v3.oas.annotations.media.Schema;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -9,6 +11,8 @@ import java.util.List;
 public class MatchDTO {
 
     private LocalDate matchDate;
+    @JsonFormat(pattern = "HH:mm:ss", shape = JsonFormat.Shape.STRING)
+    @Schema(type = "string", pattern = "HH:mm:ss", example = "12:00:00")
     private LocalTime matchTime;
     private String teamA;
     private String teamB;
@@ -35,7 +39,7 @@ public class MatchDTO {
         return teamA;
     }
 
-    public void setTeamA(String team_a) {
+    public void setTeamA(String teamA) {
         this.teamA = teamA;
     }
 

@@ -30,9 +30,22 @@ public class MatchController {
         this.matchService = matchService;
     }
 
+    @Operation(summary = "Get all Matches")
+    @ApiResponses(value = {
+            @ApiResponse(
+                    responseCode = "200",
+                    description = "List retrieved successfully",
+                    content = @Content(
+                            mediaType = "application/json",
+                            array = @ArraySchema(schema = @Schema(implementation = Match.class))))})
+    @GetMapping
+    public List<Match> getAllMatches() {
+        return matchService.getAllMatches();
+    }
+
     @Operation(summary = "Get all Matches of a specific date")
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "All the Matches returned",
+            @ApiResponse(responseCode = "200", description = "All the Matches of a specific date returned",
                     content = {@Content(mediaType = "application/json",
                             array = @ArraySchema(schema = @Schema(implementation = Match.class)))})})
     @GetMapping(value = "/matches/{date}")

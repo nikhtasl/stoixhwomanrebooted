@@ -1,10 +1,8 @@
-INSERT INTO stoixhwomanrebooteddatabase.match (id, description, match_date, match_time, teama, teamb, sport)
+INSERT INTO stoixhwomanrebooteddatabase.match (id, description, match_date, match_time, team_a, team_b, sport)
 VALUES (1, 'LAMIA-LEVADIAKOS', '2024-11-14', '18:00:00', 'LAMIA', 'LEVADIAKOS', 0),
        (2, 'VOLOS-KIFISIA', '2024-11-19', '21:30:00', 'VOLOS', 'KIFISIA', 0),
        (3, 'OSFP-PAO', '2024-11-19', '21:30:00', 'VOLOS', 'KIFISIA', 0),
        (4, 'LAVRIO-PERISTERI', '2024-11-17', '20:00:00', 'LAVRIO', 'PERISTERI', 1);
-
---       INVALID_COMMAND;
 
 INSERT INTO stoixhwomanrebooteddatabase.match_odds (id, match_id, specifier, odd)
 VALUES (7, 1, '1', 1.2),

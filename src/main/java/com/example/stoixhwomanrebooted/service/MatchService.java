@@ -8,7 +8,6 @@ import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Optional;
 
 @Service
 public class MatchService {
@@ -24,10 +23,6 @@ public class MatchService {
 
     public List<Match> getAllMatches() {
         return matchRepository.findAll();
-    }
-
-    public Optional<Match> getMatchById(Long id) {
-        return matchRepository.findById(id);
     }
 
     public List<Match> getAllMatchesByMatchDate(LocalDate date) {

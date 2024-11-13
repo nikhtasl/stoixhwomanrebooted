@@ -22,7 +22,9 @@ public class Match {
     @Column(name = "match_time")
     private LocalTime matchTime;
 
+    @Column(name = "team_a")
     private String teamA;
+    @Column(name = "team_b")
     private String teamB;
 
     @Enumerated(EnumType.STRING)
